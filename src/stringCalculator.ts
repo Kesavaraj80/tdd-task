@@ -12,5 +12,15 @@ export function add(numbers: string) {
     numbers = rest.join();
   }
 
+  const numberList = numbers.split(delimiter).map((num) => Number(num.trim()));
+
+  const negativeNumbers = numberList.filter((num) => num < 0);
+
+  if (negativeNumbers.length > 0) {
+    throw new Error(
+      `negative numbers not allowed: ${negativeNumbers.join(",")}`
+    );
+  }
+
   return numbers.split(delimiter).reduce((sum, n) => sum + Number(n), 0);
 }

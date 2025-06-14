@@ -25,4 +25,14 @@ describe("String Calculator - TDD Kata", () => {
   it("supports custom delimiter (e.g., //;\n1;2)", () => {
     expect(add("//;\n1;2")).to.equal(3);
   });
+
+  it("throws error for single negative number", () => {
+    expect(() => add("1,-2")).to.throw("negative numbers not allowed: -2");
+  });
+
+  it("throws error for multiple negative numbers", () => {
+    expect(() => add("2,-4,3,-5")).to.throw(
+      "negative numbers not allowed: -4,-5"
+    );
+  });
 });
