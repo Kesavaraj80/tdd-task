@@ -21,4 +21,8 @@ describe("String Calculator - TDD Kata", () => {
   it("supports newline as a delimiter", () => {
     expect(add("1\n2,3")).to.equal(6);
   });
+
+  it("supports custom delimiter (e.g., //;\n1;2)", () => {
+    expect(add("//;\n1;2")).to.equal(3);
+  });
 });

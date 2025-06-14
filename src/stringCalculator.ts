@@ -3,9 +3,14 @@ export function add(numbers: string) {
 
   if (numbers.length === 1) return Number(numbers);
 
-  let delimiter = /;|,|\n|</;
+  let delimiter = /,|\n/;
+
+  if (numbers.startsWith("//")) {
+    const [delimiterLine, ...rest] = numbers.split("\n");
+    const customDelimiter = delimiterLine.slice(2);
+    delimiter = new RegExp(customDelimiter, "g");
+    numbers = rest.join();
+  }
 
   return numbers.split(delimiter).reduce((sum, n) => sum + Number(n), 0);
 }
-
-console.log(add("1,\n1;2"));
