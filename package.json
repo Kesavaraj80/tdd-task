@@ -1,0 +1,29 @@
+{
+  "name": "tdd-task",
+  "version": "1.0.0",
+  "description": "String Calculator implementation using TDD principles",
+  "main": "dist/stringCalculator.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha -r ts-node/register 'tests/**/*.test.ts'",
+    "build": "tsc",
+    "start": "node dist/stringCalculator.js"
+  },
+  "keywords": [
+    "tdd",
+    "kata",
+    "string-calculator"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
