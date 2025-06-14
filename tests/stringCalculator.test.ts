@@ -13,4 +13,8 @@ describe("String Calculator - TDD Kata", () => {
   it("returns sum of two numbers separated by comma", () => {
     expect(add("1,2")).to.equal(3);
   });
+
+  it("returns sum of multiple numbers", () => {
+    expect(add("1,2,3,4")).to.equal(10);
+  });
 });
