@@ -17,4 +17,8 @@ describe("String Calculator - TDD Kata", () => {
   it("returns sum of multiple numbers", () => {
     expect(add("1,2,3,4")).to.equal(10);
   });
+
+  it("supports newline as a delimiter", () => {
+    expect(add("1\n2,3")).to.equal(6);
+  });
 });
