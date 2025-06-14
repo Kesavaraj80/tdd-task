@@ -5,4 +5,12 @@ describe("String Calculator - TDD Kata", () => {
   it("returns 0 for empty string", () => {
     expect(add("")).to.equal(0);
   });
+
+  it("returns number when only one number is provided", () => {
+    expect(add("5")).to.equal(5);
+  });
+
+  it("returns sum of two numbers separated by comma", () => {
+    expect(add("1,2")).to.equal(3);
+  });
 });
